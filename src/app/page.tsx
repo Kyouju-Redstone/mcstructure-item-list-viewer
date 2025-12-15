@@ -2,21 +2,22 @@
 
 import FileUploader from "@/features/itemlist/components/FileUploader";
 import JsonViewer from "@/features/itemlist/components/JsonViewer";
-import { convertMcstructureToJson } from "@/features/itemlist/utils/convert";
+import { parseMcstructure } from "@/features/itemlist/utils/convert";
+import { Stack } from "@mui/material";
 import { useState } from "react";
 
 export default function Home() {
-    const [json, setJson] = useState<string>("");
+    const [structure, setStructure] = useState<Object | null>(null);
 
     const handleFileSelect = async (file: File) => {
-        const json = await convertMcstructureToJson(file);
-        setJson(json);
+        const obj = await parseMcstructure(file);
+        setStructure(obj);
     }
 
     return (
-        <>
+        <Stack spacing={2} useFlexGap>
             <FileUploader onSelect={handleFileSelect}/>
-            <JsonViewer json={json}/>
-        </>
+            <JsonViewer structure={structure}/>
+        </Stack>
     );
 }
