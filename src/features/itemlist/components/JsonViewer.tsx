@@ -10,13 +10,14 @@ import {
     Typography
 } from "@mui/material";
 import { List, RowComponentProps } from "react-window";
+import { Mcstructure } from "../types/McstructureNbt";
 
 interface JsonViewerProps {
-    structure: Object | null;
+    mcstructure: Mcstructure | null;
 }
 
 const JsonViewer = (props: JsonViewerProps) => {
-    const json = JSON.stringify(props.structure, null, 2);  // オブジェクトをJSONに変換
+    const json = JSON.stringify(props.mcstructure, null, 2);  // オブジェクトをJSONに変換
     const jsonLines = json.split("\n");                     // 改行で分割
     const fontSize = 13;
 
@@ -27,19 +28,19 @@ const JsonViewer = (props: JsonViewerProps) => {
 
     return (
         <>
-            {props.structure && (
+            {props.mcstructure && (
                 <Accordion
                     disableGutters
                     elevation={0}
                     sx={{
                         border: "1px solid",
                         borderColor: "divider",
-                        alignItems: 'center',
+                        alignItems: "center",
                         "&:before": {
-                            display: "none"
+                            display: "none",
                         },
                         '& .MuiAccordionSummary-content': {
-                            alignItems: 'center',          // ← 中身も中央
+                            alignItems: "center",          // ← 中身も中央
                             margin: 0,                     // ← 上寄せ防止
                         },
                     }}
