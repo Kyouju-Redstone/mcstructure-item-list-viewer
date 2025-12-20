@@ -13,11 +13,12 @@ export function getBlockNameJa(blockId: string): string | undefined {
         "",
     );
 
-    // Java版のja_JP.jsonからブロック名を取得
+    // Java版の翻訳ファイルからブロック名を取得
     const javaKey = `block.minecraft.${pure}`;
     blockName = langJava[javaKey];
 
     if (!blockName) {
+        // 統合版の翻訳ファイルからブロック名を取得
         const bedrockKeyCandidates = [
             `tile.${pure}.${pure}.name`,
             `tile.${pure}.name`,
