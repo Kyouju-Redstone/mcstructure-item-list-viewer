@@ -60,6 +60,7 @@ const JsonViewer = (props: JsonViewerProps) => {
                         >
                             <Tooltip title="コピー">
                                 <IconButton
+                                    component="span"
                                     size="small"
                                     onClick={(e) => {
                                         e.stopPropagation();

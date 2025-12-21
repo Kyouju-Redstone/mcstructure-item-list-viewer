@@ -7,6 +7,5 @@ export async function parseMcstructure(file: File): Promise<Mcstructure> {
     const { parsed } = await nbt.parse(buffer);
     const mcstructureNbt = nbt.simplify(parsed) as Mcstructure;
 
-    console.log(mcstructureNbt);
     return mcstructureNbt;
 }

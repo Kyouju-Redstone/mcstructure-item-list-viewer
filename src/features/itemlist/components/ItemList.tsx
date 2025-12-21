@@ -49,23 +49,17 @@ const ItemList = (props: ItemListProps) => {
                                 key={item.nameJa}
                                 divider
                                 secondaryAction={
-                                    <Stack direction={"row"}>
-                                        <Typography fontWeight="bold">
-                                            {"×"}
-                                        </Typography>
-                                        <Typography
-                                            fontWeight="bold"
-                                            width={40}
-                                            textAlign="right"
-                                        >
-                                            {item.count}
-                                        </Typography>
-                                    </Stack>
+                                    <Typography
+                                        fontWeight="bold"
+                                        width={40}
+                                        textAlign="right"
+                                    >
+                                        {item.count}
+                                    </Typography>
                                 }
                             >
                                 <ListItemText
                                     primary={item.nameJa ?? "＊＊＊＊＊＊"}
-                                    secondary={Array.from(item.blockIds).join(", ")}
                                 />
                             </ListItem>
                         ))}

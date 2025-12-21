@@ -1,8 +1,8 @@
 // 表示しないアイテムリスト
-const hiddenItems: string[] = [
+const hiddenItemBlockIds: string[] = [
     "minecraft:air",
     "minecraft:sticky_piston_arm_collision",
     "minecraft:piston_arm_collision",
 ];
 
-export default hiddenItems;
+export default hiddenItemBlockIds;
